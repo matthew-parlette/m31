@@ -37,7 +37,6 @@ def json_repr(obj):
 def handle(socket, address):
     log.info("Connection received from {}".format(str(address)))
     log.info("Creating ServerGameAdapter...")
-    game = ServerGameAdapter(log=log, bigbang=args.bigbang)
     log.debug("Creating fileobj")
     fileobj = socket.makefile()
 
@@ -46,8 +45,8 @@ def handle(socket, address):
         log.debug("Waiting for commands...")
         line = fileobj.readline()
         if not line:
-            log.info("Client disconnected, saving game...")
-            game.save()
+            log.info("Client disconnected...")
+            # game.save()
             break
         # Process line as a command
         command_dict = json.loads(line)
