@@ -93,14 +93,19 @@ if __name__ == "__main__":
         '%(asctime)s:%(name)s:%(levelname)s:'
         '%(funcName)s(%(lineno)i):%(message)s')
 
+    # Console Logging
+    ch = logging.StreamHandler()
+    ch.setLevel(log_level)
+    ch.setFormatter(formatter)
+    log.addHandler(ch)
+
     # File Logging
     fh = logging.FileHandler(os.path.basename(__file__) + '.log')
     fh.setLevel(log_level)
     fh.setFormatter(formatter)
     log.addHandler(fh)
 
-    while True:
-        server = StreamServer((args.host, args.port), handle)
-        log.info("Server initialized on {}:{}, listening...".format(
-            str(args.host), str(args.port)))
-        server.serve_forever()
+    server = StreamServer((args.host, args.port), handle)
+    log.info("Server initialized on {}:{}, listening...".format(
+        str(args.host), str(args.port)))
+    server.serve_forever()
