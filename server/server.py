@@ -5,6 +5,7 @@ import logging
 import os
 import json
 from gevent.server import StreamServer
+from module import Module
 
 
 def json_repr(obj):
@@ -103,6 +104,12 @@ if __name__ == "__main__":
     fh.setLevel(log_level)
     fh.setFormatter(formatter)
     log.addHandler(fh)
+
+    # Load modules
+    log.info("Importing modules...")
+    from modules import *
+    log.info("Loading modules...")
+    modules = [m(log) for m in Module.modules]
 
     server = StreamServer((args.host, args.port), handle)
     log.info("Server initialized on {}:{}, listening...".format(
