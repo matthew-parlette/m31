@@ -1,25 +1,27 @@
 {# objects.html #}
 <!-- Object Display -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3">
-      <div class="offer offer-default">
-        <div class="shape">
-          <div class="shape-text">
-            {{ tag  }}
-          </div>
-        </div>
-        <div class="offer-content">
-          <h3 class="lead">
-            {{ heading }}
-          </h3>
-          <p>
-            {% for line in description %}
-            {{ line }}{% if not loop.last %}<br>{% endif %}
-            {% endfor %}
-          </p>
-        </div>
+<div class="col-xs-3">
+  {% if color is defined %}
+    {% if color == "green" %}
+  <div class="offer offer-success">
+    {% endif %}
+  {% else %}
+  <div class="offer offer-default">
+  {% endif %}
+    <div class="shape">
+      <div class="shape-text">
+        {{ tag  }}
       </div>
+    </div>
+    <div class="offer-content">
+      <h3 class="lead">
+        {{ heading }}
+      </h3>
+      <p>
+        {% for line in description %}
+        {{ line }}{% if not loop.last %}<br>{% endif %}
+        {% endfor %}
+      </p>
     </div>
   </div>
 </div>

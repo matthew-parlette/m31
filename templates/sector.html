@@ -1,6 +1,16 @@
 {# sector.html #}
-{% with tag="", heading="warp gates", description=["123", "234", "345"] %}
+<div class="container">
+  <div class="row">
 <!-- Sector Display -->
+<!-- Planets -->
+{% with color="green", tag="planet", heading="earth", description=["Population 100M", "Level 3 Citadel", "Shielded"] %}
 {% include 'object.html' %}
-<!-- End Sector Display -->
 {% endwith %}
+
+<!-- Warps -->
+{% with tag="", heading="warp gates", description=["123", "234", "345"] %}
+{% include 'object.html' %}
+{% endwith %}
+<!-- End Sector Display -->
+  </div>
+</div>
