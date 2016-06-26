@@ -56,59 +56,75 @@ body {
 }
 /* End Navbar */
 
-/* Panel */
-.shape{ 
-  border-style: solid; border-width: 0 70px 40px 0; float:right; height: 0px; width: 0px;
-  -ms-transform:rotate(360deg); /* IE 9 */
-  -o-transform: rotate(360deg);  /* Opera 10.5 */
-  -webkit-transform:rotate(360deg); /* Safari and Chrome */
-  transform:rotate(360deg);
-}
-.offer{
-  background:#fff; border:1px solid #ddd; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
-}
-.offer-radius{
-  border-radius:7px;
-}
-.offer-danger { border-color: #d9534f; }
-.offer-danger .shape{
-  border-color: transparent #d9534f transparent transparent;
-  border-color: rgba(255,255,255,0) #d9534f rgba(255,255,255,0) rgba(255,255,255,0);
-}
-.offer-success {        border-color: #5cb85c; }
-.offer-success .shape{
-  border-color: transparent #5cb85c transparent transparent;
-  border-color: rgba(255,255,255,0) #5cb85c rgba(255,255,255,0) rgba(255,255,255,0);
-}
-.offer-default {        border-color: #999999; }
-.offer-default .shape{
-  border-color: transparent #999999 transparent transparent;
-  border-color: rgba(255,255,255,0) #999999 rgba(255,255,255,0) rgba(255,255,255,0);
-}
-.offer-primary {        border-color: #428bca; }
-.offer-primary .shape{
-  border-color: transparent #428bca transparent transparent;
-  border-color: rgba(255,255,255,0) #428bca rgba(255,255,255,0) rgba(255,255,255,0);
-}
-.offer-info {   border-color: #5bc0de; }
-.offer-info .shape{
-  border-color: transparent #5bc0de transparent transparent;
-  border-color: rgba(255,255,255,0) #5bc0de rgba(255,255,255,0) rgba(255,255,255,0);
-}
-.offer-warning {        border-color: #f0ad4e; }
-.offer-warning .shape{
-  border-color: transparent #f0ad4e transparent transparent;
-  border-color: rgba(255,255,255,0) #f0ad4e rgba(255,255,255,0) rgba(255,255,255,0);
+/* Card */
+.card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-.shape-text{
-  color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:2px; white-space: nowrap;
-  -ms-transform:rotate(30deg); /* IE 9 */
-  -o-transform: rotate(360deg);  /* Opera 10.5 */
-  -webkit-transform:rotate(30deg); /* Safari and Chrome */
-  transform:rotate(30deg);
-}       
-.offer-content{
-  padding:0 20px 10px;
+.card {
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-clip: padding-box;
 }
-/* End Panel */
+.card span.card-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card .card-image {
+  position: relative;
+  overflow: hidden;
+}
+.card .card-image span {
+  font-size: 20em;
+  text-align: center;
+  border-radius: 2px 2px 0 0;
+  background-clip: padding-box;
+  position: relative;
+  z-index: -1;
+}
+.card .card-image img {
+  border-radius: 2px 2px 0 0;
+  background-clip: padding-box;
+  position: relative;
+  z-index: -1;
+}
+.card .card-image span.card-title {
+  font-size: 2em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+}
+.card .card-content {
+  padding: 16px;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+.card .card-content p {
+  margin: 0;
+  color: inherit;
+}
+.card .card-content span.card-title {
+  line-height: 48px;
+}
+.card .card-action {
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 16px;
+}
+.card .card-action a {
+  color: #ffab40;
+  margin-right: 16px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+.card .card-action a:hover {
+  color: #ffd8a6;
+  text-decoration: none;
+}
+/* End Card */
+
